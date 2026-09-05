@@ -1,0 +1,96 @@
+<div class="wrap">
+
+    
+
+    <div class="contact__layout">
+
+      <div class="cinfo">
+        <div class="cinfo__row" data-reveal>
+          <span class="cinfo__k"><span lang="ar">اسم الشركة</span><span lang="en">Company</span></span>
+          <span class="cinfo__v"><span lang="ar">مهندسون بلا حدود</span><span lang="en">Engineers Without Borders</span></span>
+        </div>
+        <div class="cinfo__row" data-reveal style="--rd:50ms">
+          <span class="cinfo__k"><span lang="ar">النشاط</span><span lang="en">Activity</span></span>
+          <span class="cinfo__v"><span lang="ar">معمل الحدادة العامة — الأبواب والشبابيك المصبوبة من الألمنيوم</span><span lang="en">General metalworks plant — cast-aluminium doors and windows</span></span>
+        </div>
+        <div class="cinfo__row" data-reveal style="--rd:100ms">
+          <span class="cinfo__k"><span lang="ar">مقر الإدارة</span><span lang="en">Administrative office</span></span>
+          <span class="cinfo__v"><span lang="ar">العراق — بغداد — شارع فلسطين</span><span lang="en">Iraq — Baghdad — Palestine Street</span></span>
+        </div>
+        <div class="cinfo__row" data-reveal style="--rd:150ms">
+          <span class="cinfo__k"><span lang="ar">موقع المعمل</span><span lang="en">Plant location</span></span>
+          <span class="cinfo__v"><span lang="ar">بغداد — جرف النداف / قضاء المدائن — مقاطعة (9) جعارة</span><span lang="en">Baghdad — Jurf Al-Naddaf / Al-Mada'in District — Cadastral Unit (9) Ja'ara</span></span>
+        </div>
+        <div class="cinfo__row" data-reveal style="--rd:200ms">
+          <span class="cinfo__k"><span lang="ar">الهاتف</span><span lang="en">Phone</span></span>
+          <span class="cinfo__v"><a class="ltr" href="tel:+9647714770178">0771 477 0178</a></span>
+        </div>
+        <div class="cinfo__row" data-reveal style="--rd:250ms">
+          <span class="cinfo__k"><span lang="ar">البريد الإلكتروني</span><span lang="en">Email</span></span>
+          <span class="cinfo__v"><a class="ltr" href="mailto:engineersw.b@yahoo.com">engineersw.b@yahoo.com</a></span>
+        </div>
+        <div class="cinfo__row" data-reveal style="--rd:300ms">
+          <span class="cinfo__k"><span lang="ar">وسائل التواصل</span><span lang="en">Social</span></span>
+          <span class="cinfo__v">
+            <a class="ltr" href="https://instagram.com/engineerswithoutbordrs" target="_blank" rel="noopener">Instagram</a>
+            &nbsp;·&nbsp;
+            <a class="ltr" href="https://facebook.com/profile.php?id=100063899376868" target="_blank" rel="noopener">Facebook</a>
+          </span>
+        </div>
+      </div>
+
+      <form class="form" id="contactForm" novalidate data-reveal="side">
+        <div class="form__row">
+          <div class="field">
+            <label for="f-name"><span lang="ar">الاسم</span><span lang="en">Name</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" required
+                   data-ar-placeholder="اسمك الكامل" data-en-placeholder="Your full name" placeholder="اسمك الكامل">
+            <span class="field__err"><span lang="ar">الرجاء إدخال الاسم.</span><span lang="en">Please enter your name.</span></span>
+          </div>
+          <div class="field">
+            <label for="f-email"><span lang="ar">البريد الإلكتروني</span><span lang="en">Email</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" required
+                   data-ar-placeholder="name@example.com" data-en-placeholder="name@example.com" placeholder="name@example.com">
+            <span class="field__err"><span lang="ar">الرجاء إدخال بريد إلكتروني صحيح.</span><span lang="en">Please enter a valid email address.</span></span>
+          </div>
+        </div>
+
+        <div class="form__row">
+          <div class="field">
+            <label for="f-phone"><span lang="ar">الهاتف</span><span lang="en">Phone</span></label>
+            <input type="tel" id="f-phone" name="phone" autocomplete="tel"
+                   data-ar-placeholder="07XX XXX XXXX" data-en-placeholder="07XX XXX XXXX" placeholder="07XX XXX XXXX">
+            <span class="field__err"></span>
+          </div>
+          <div class="field">
+            <label for="f-company"><span lang="ar">الجهة / الشركة</span><span lang="en">Company</span></label>
+            <input type="text" id="f-company" name="company" autocomplete="organization"
+                   data-ar-placeholder="اختياري" data-en-placeholder="Optional" placeholder="اختياري">
+            <span class="field__err"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-message"><span lang="ar">الرسالة</span><span lang="en">Message</span></label>
+          <textarea id="f-message" name="message" rows="5" required
+                    data-ar-placeholder="صف المشروع: نوع المنتَج، القياسات التقريبية، والموقع." data-en-placeholder="Describe the project: product type, approximate dimensions and location."
+                    placeholder="صف المشروع: نوع المنتَج، القياسات التقريبية، والموقع."></textarea>
+          <span class="field__err"><span lang="ar">الرجاء كتابة رسالتك.</span><span lang="en">Please write your message.</span></span>
+        </div>
+
+        <div class="form__foot">
+          <p class="form__note">
+            <span lang="ar">يفتح الزر برنامج البريد لديك برسالة جاهزة موجَّهة إلى <span class="ltr">engineersw.b@yahoo.com</span>.</span>
+            <span lang="en">The button opens your email client with a prepared message addressed to <span class="ltr">engineersw.b@yahoo.com</span>.</span>
+          </p>
+          <button class="btn btn--light btn--brass" type="submit">
+            <span lang="ar">أرسل الرسالة</span><span lang="en">Send Message</span>
+            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+
+    </div>
+  </div>
