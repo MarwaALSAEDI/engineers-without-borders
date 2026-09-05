@@ -322,10 +322,12 @@ d.lang='en';d.dir='ltr';}}catch(e){}})();
     <div class="footer__grid">
 
       <div class="footer__col footer__about">
-        <span class="brand__plate">
-          <img src="assets/img/logo-256.png" width="256" height="256" loading="lazy"
-               alt="شعار مهندسون بلا حدود" data-en-alt="Engineers Without Borders logo">
-        </span>
+        <!-- The logo's own lettering is black and sits outside the diamond,
+             so on this dark ground it would be unreadable. The footer
+             carries the name typographically instead. -->
+        <p class="footer__wordmark">
+          <span lang="ar">مهندسون بلا حدود</span><span lang="en">Engineers Without Borders</span>
+        </p>
         <p>
           <span lang="ar">معملٌ عراقي متخصص في إنتاج الأبواب والبوابات والشبابيك المصنوعة من الألمنيوم المصبوب — بغداد / جرف النداف.</span>
           <span lang="en">An Iraqi plant specialised in cast-aluminium doors, gates and windows — Jurf Al-Naddaf, Baghdad.</span>
