@@ -4,7 +4,6 @@
      · values selector
      · products list + media panel
      · production-process horizontal track (RTL aware)
-     · contact form
    ============================================================ */
 (function () {
   'use strict';
@@ -228,89 +227,6 @@
   }
 
   /* ============================================================
-     CONTACT FORM
-     ============================================================ */
-  function initForm() {
-    var form = document.getElementById('contactForm');
-    if (!form) return;
-
-    var status = document.getElementById('formStatus');
-    var EMAIL = 'engineersw.b@yahoo.com';
-
-    function fieldOf(input) { return input.closest('.field'); }
-
-    function validate(input) {
-      var ok = true;
-      if (input.hasAttribute('required') && !input.value.trim()) ok = false;
-      if (ok && input.type === 'email' && input.value.trim()) {
-        ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim());
-      }
-      var wrap = fieldOf(input);
-      if (wrap) wrap.classList.toggle('is-invalid', !ok);
-      return ok;
-    }
-
-    Array.prototype.forEach.call(form.querySelectorAll('input, textarea'), function (input) {
-      input.addEventListener('blur', function () {
-        if (input.value.trim() || input.hasAttribute('required')) validate(input);
-      });
-      input.addEventListener('input', function () {
-        var wrap = fieldOf(input);
-        if (wrap && wrap.classList.contains('is-invalid')) validate(input);
-      });
-    });
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var required = Array.prototype.slice.call(form.querySelectorAll('[required]'));
-      var valid = required.map(validate).every(Boolean);
-
-      if (!valid) {
-        status.textContent = lang() === 'ar'
-          ? 'الرجاء إكمال الحقول المطلوبة.'
-          : 'Please complete the required fields.';
-        var firstBad = form.querySelector('.field.is-invalid input, .field.is-invalid textarea');
-        if (firstBad) firstBad.focus();
-        return;
-      }
-
-      var data = new FormData(form);
-      var ar = lang() === 'ar';
-
-      var subject = ar
-        ? 'طلب عرض سعر — ' + (data.get('name') || '')
-        : 'Enquiry — ' + (data.get('name') || '');
-
-      var lines = ar
-        ? ['الاسم: ' + (data.get('name') || ''),
-           'البريد الإلكتروني: ' + (data.get('email') || ''),
-           'الهاتف: ' + (data.get('phone') || '—'),
-           'الجهة / الشركة: ' + (data.get('company') || '—'),
-           '',
-           'الرسالة:',
-           data.get('message') || '']
-        : ['Name: ' + (data.get('name') || ''),
-           'Email: ' + (data.get('email') || ''),
-           'Phone: ' + (data.get('phone') || '—'),
-           'Company: ' + (data.get('company') || '—'),
-           '',
-           'Message:',
-           data.get('message') || ''];
-
-      var href = 'mailto:' + EMAIL +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(lines.join('\n'));
-
-      window.location.href = href;
-
-      status.textContent = ar
-        ? 'تم فتح برنامج البريد لديك. إن لم يفتح، راسلنا مباشرة على ' + EMAIL
-        : 'Your email client should now be open. If it did not, write to us directly at ' + EMAIL;
-    });
-  }
-
-  /* ============================================================
      boot
      ============================================================ */
   function init() {
@@ -318,7 +234,6 @@
     initValues();
     initProducts();
     initTrack();
-    initForm();
   }
 
   if (document.readyState === 'loading') {
